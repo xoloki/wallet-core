@@ -20,6 +20,8 @@ pub enum TWDerivation {
     BitcoinTaproot = 8,
     PactusMainnet = 9,
     PactusTestnet = 10,
+    StacksMainnet = 11,
+    StacksTestnet = 12,
     // end_of_derivation_enum - USED TO GENERATE CODE
     #[default]
     Default = 0,
@@ -36,6 +38,8 @@ impl From<TWDerivation> for Derivation {
             TWDerivation::BitcoinTaproot => Derivation::Taproot,
             TWDerivation::PactusMainnet => Derivation::Default,
             TWDerivation::PactusTestnet => Derivation::Testnet,
+            TWDerivation::StacksMainnet => Derivation::Default,
+            TWDerivation::StacksTestnet => Derivation::Testnet,
         }
     }
 }
